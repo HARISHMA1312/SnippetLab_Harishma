@@ -80,8 +80,7 @@ select {
 .form-control
 {
   border-color: #28f0ceba; /* Change border color on hover/focus */
-  box-shadow: 0 0 10px rgba(40, 240, 206, 0.9)
-  ;
+  box-shadow: 0 0 10px rgba(40, 240, 206, 0.9);
 }
 #color
 {

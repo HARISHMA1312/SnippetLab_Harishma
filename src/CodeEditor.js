@@ -160,10 +160,11 @@ const CodeEditor = () => {
             </div>
           </div>
 
-          <textarea
+          <textarea type="text"
             id="editor"
             className="form-control"
             value={code}
+            aria-label="Code Editor"
             onChange={(e) => setCode(e.target.value)}
             placeholder="Write your code here..."
             rows="10"
@@ -194,6 +195,7 @@ const CodeEditor = () => {
           </div>
 
           <div className="d-flex flex-column flex-md-row mt-2">
+          
             <button onClick={captureScreenshot} className="btn btn-success me-2 mb-2 mb-md-0 me-md-2 w-auto">
               Screenshot
             </button>

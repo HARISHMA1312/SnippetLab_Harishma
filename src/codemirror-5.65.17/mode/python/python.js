@@ -1,6 +1,8 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: https://codemirror.net/5/LICENSE
-/* global define, CodeMirror */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-undef */
+/* eslint-disable no-restricted-globals */
 
 (function(mod) {
   if (typeof exports == "object" && typeof module == "object") // CommonJS
