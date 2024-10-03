@@ -106,14 +106,24 @@ const CodeEditor = () => {
   const saveAsPDF = () => {
     const pdfName = prompt('Enter the name for your PDF:', 'document');
     if (pdfName) {
-      html2canvas(document.body).then((canvas) => {
+      // Use the window's width and height to calculate the PDF size dynamically
+      const scale = 2; // Scaling factor to increase the resolution, you can adjust this
+      html2canvas(document.body, {
+        scale: scale, // Scale to ensure high-resolution capture
+        width: window.innerWidth, // Get the width of the window
+        height: window.innerHeight, // Get the height of the window
+      }).then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF('l', 'mm', 'a4');
-        pdf.addImage(imgData, 'PNG', 0, 0, 300, 297);
+        const pdf = new jsPDF('p', 'mm', 'a4'); // Create an A4 PDF
+        const pdfWidth = pdf.internal.pageSize.getWidth(); // Get PDF page width
+        const pdfHeight = (canvas.height * pdfWidth) / canvas.width; // Calculate height to maintain aspect ratio
+  
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
         pdf.save(pdfName + '.pdf');
       });
     }
   };
+  
 
   return (
     <div className="container-fluid" id="color">
