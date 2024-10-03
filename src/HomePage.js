@@ -1,15 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Button, Row, Col, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
-  
-  const navigate = useNavigate(); 
+
+  const navigate = useNavigate();
+
+  const [titleFontSize, setTitleFontSize] = useState('3rem'); // Default font size for large screens
+  const [worldFontSize, setWorldFontSize] = useState('2.5rem');
+
+  // Function to adjust font sizes based on window width
+  const updateFontSizes = () => {
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth >= 1200) {
+      // Large screens (1200px and up)
+      setTitleFontSize('3.5rem');
+      setWorldFontSize('3rem');
+    } else if (windowWidth >= 768) {
+      // Medium screens (768px to 1199px)
+      setTitleFontSize('3rem');
+      setWorldFontSize('2.5rem');
+    } else {
+      // Small screens (below 768px)
+      setTitleFontSize('2rem');
+      setWorldFontSize('1.75rem');
+    }
+  };
+
+  // Update font sizes when the component mounts and on window resize
+  useEffect(() => {
+    updateFontSizes(); // Run initially
+    window.addEventListener('resize', updateFontSizes); // Listen for resize events
+
+    // Cleanup listener on component unmount
+    return () => window.removeEventListener('resize', updateFontSizes);
+  }, []);
 
   const handleCreateFlashcards = () => {
-    navigate('/create'); 
+    navigate('/create');
   };
-  
 
   const handleStartCoding = () => {
     navigate('/code-editor');
@@ -18,22 +48,38 @@ const HomePage = () => {
   const handlestartlearning = () => {
     navigate('/FlashCards');
   };
-  
+
   return (
     <Container fluid className="homepage-container bg-grey text-center" style={{ color: '#66FCF1' }}>
       <Row className="justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
         <Col xs={11} md={9}>
-          <h1 className="snippet-lab-title">WELCOME TO SNIPPET LAB!</h1>
-          <h1 className="snippet-lab-world">Hello World!</h1>
+          <h1 
+            className="snippet-lab-title" 
+            style={{ fontSize: titleFontSize, textAlign: 'center' }}
+          >
+            WELCOME TO SNIPPET LAB!
+          </h1>
+          <h1 
+            className="snippet-lab-world" 
+            style={{ fontSize: worldFontSize, textAlign: 'center' }}
+          >
+            Hello World!
+          </h1>
 
           <p style={{ fontFamily: 'Times New Roman', color: '#C5C6C7', textAlign: 'center', fontSize: '1.25rem' }}>
             Snippet Lab allows users to write and run code in multiple programming languages using a built-in code editor where they can view the output instantly. Users can share their code and results through links or as PDFs. It also has special features like a flashcards section where users can learn programming concepts like syntax, commands, and functions, and they can create and save their own flashcards.
           </p>
-          <div className="buttons-section mt-4 d-flex flex-column flex-md-row justify-content-center align-items-center">
-            <Button variant="outline-info" className="mb-2 mb-md-0 me-md-2" size="lg" onClick={handleStartCoding} >Start Coding</Button>
-            <Button variant="outline-info" className="mb-2 mb-md-0 me-md-2" size="lg"onClick={handlestartlearning}>Start Learning</Button>
-            <Button variant="outline-info" className="mb-2 mb-md-0 me-md-2" size="lg" onClick={handleCreateFlashcards}>View Flashcards</Button>
 
+          <div className="buttons-section mt-4 d-flex flex-column flex-md-row justify-content-center align-items-center">
+            <Button variant="outline-info" className="mb-2 mb-md-0 me-md-2" size="lg" onClick={handleStartCoding}>
+              Start Coding
+            </Button>
+            <Button variant="outline-info" className="mb-2 mb-md-0 me-md-2" size="lg" onClick={handlestartlearning}>
+              Start Learning
+            </Button>
+            <Button variant="outline-info" className="mb-2 mb-md-0 me-md-2" size="lg" onClick={handleCreateFlashcards}>
+              View Flashcards
+            </Button>
           </div>
         </Col>
       </Row>
@@ -130,7 +176,6 @@ const HomePage = () => {
           <Card className="team-card">
             <Card.Img 
               variant="top" 
-             
               style={{ width: '100%', height: '200px', objectFit: 'cover' }} 
             />
             <Card.Body>
@@ -142,7 +187,6 @@ const HomePage = () => {
           <Card className="team-card">
             <Card.Img 
               variant="top" 
-              
               style={{ width: '100%', height: '200px', objectFit: 'cover' }} 
             />
             <Card.Body>
