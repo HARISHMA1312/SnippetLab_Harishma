@@ -131,11 +131,11 @@
 }
 
 .custom-navbar {
-  background: rgba(237, 231, 231, 0.5); /* Match the login box transparency */
-  border: 2px solid rgba(20, 19, 19, 0.2); /* Match the login box border */
-  backdrop-filter: blur(9px); /* Same blur effect as the login box */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Match the box shadow of the login box */
-  width: 100%; /* Ensure full width */
+  background: rgba(237, 231, 231, 0.5); 
+  border: 2px solid rgba(20, 19, 19, 0.2); 
+  backdrop-filter: blur(9px); 
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
+  width: 100%; 
 }
 
 
@@ -157,12 +157,12 @@
   font-weight: bold;
 }
 
-/* Ensure the content starts after the fixed navbar */
+
 .wrapper {
-  padding-top: 20px; /* Adjust based on your navbar height */
+  padding-top: 20px; 
 }
 
-/* Adjust container margins/padding */
+
 .container {
-  margin-top: 100px; /* Ensure proper space after navbar */
+  margin-top: 100px; 
 }

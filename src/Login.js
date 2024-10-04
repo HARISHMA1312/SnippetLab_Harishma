@@ -52,11 +52,11 @@ const Login = () => {
       >
         <form onSubmit={handleLogin}>
         <h1 style={{
-  fontSize: '32px', // Adjust the font size as needed
+  fontSize: '32px', 
   fontWeight: 'bold',
   textAlign: 'center',
-  color: '#000', // Change this to your desired text color
-  textShadow: '0 2px 4px rgba(40, 240, 206, 0.9), 0 4px 8px rgba(0, 0, 0, 0.3)' // Shiny shadow effect
+  color: '#000', 
+  textShadow: '0 2px 4px rgba(40, 240, 206, 0.9), 0 4px 8px rgba(0, 0, 0, 0.3)' 
 }}>
   Login
 </h1>
@@ -80,6 +80,13 @@ const Login = () => {
                 padding: "20px 45px 20px 20px",
               }}
             />
+            <style>
+  {`
+    input::placeholder {
+      color: #a9a9a9;
+    }
+  `}
+</style>
             <i
               className="bx bxs-user"
               style={{
@@ -144,12 +151,12 @@ const Login = () => {
               color: "#333",
               fontWeight: "600",
             }} onMouseEnter={(e) => {
-              e.target.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.6)'; // Add shadow on hover
-              e.target.style.backgroundColor = '#28f0ceba'; // Change background color on hover
+              e.target.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.6)'; 
+              e.target.style.backgroundColor = '#28f'; 
             }}
             onMouseLeave={(e) => {
-              e.target.style.boxShadow = 'none'; // Remove shadow when not hovered
-              e.target.style.backgroundColor = 'transparent'; // Reset background color when not hovered
+              e.target.style.boxShadow = 'none';
+              e.target.style.backgroundColor = 'transparent'; 
             }}
           >
             Login

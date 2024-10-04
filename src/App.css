@@ -43,27 +43,27 @@
 }
 
 
-/*loadingScreen*/
+
 .loading-screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #f2e9ff; /* Mild violet background */
+  background-color: #f2e9ff; 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 9999; /* Keep it above everything else */
+  z-index: 9999;
 }
 
 .app-name {
-  color: #5e60ce; /* Mild violet */
-  font-size: 100rem; /* Adjust for a good size */
-  font-family: 'Poppins', 'Times New Roman', serif; /* A clean, modern font with fallback */
-  font-weight: 700; /* Bold */
-  animation: fadeInOut 2s ease-in-out infinite; /* Continuous fade-in/out */
+  color: #5e60ce; 
+  font-size: 100rem; 
+  font-family: 'Poppins', 'Times New Roman', serif; 
+  font-weight: 700; 
+  animation: fadeInOut 2s ease-in-out infinite; 
   letter-spacing: 7px; 
 }
 
@@ -158,9 +158,9 @@
 #share {
 
   color: #171717;
-  /* Adjust text color as needed */
+  
   background-color: #FFFFFF;
-  /* Initial button color */
+  
   border: none;
   padding: 5px 15px;
   border-radius: 75px;
@@ -199,18 +199,18 @@
 
 .custom-color {
   background-color:  #282a36;
-  /* Your desired background color */
+  
 }
 .form-select {
-border-radius: 0.5rem; /* Rounded borders */
-backdrop-filter: blur(10px); /* Blur effect */
-background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
-transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+border-radius: 0.5rem; 
+backdrop-filter: blur(10px); 
+background-color: rgba(255, 255, 255, 0.8); 
+transition: background-color 0.3s, border-color 0.3s; 
 }
 
 .form-select:hover,
 .form-select:focus {
-background-color: rgba(255, 255, 255, 1); /* Full opacity on hover/focus */
-border-color: #007bff; /* Change border color on hover/focus */
-box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow effect */
+background-color: rgba(255, 255, 255, 1); 
+border-color: #007bff; 
+box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
 }

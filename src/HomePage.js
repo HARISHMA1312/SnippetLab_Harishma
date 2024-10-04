@@ -1,39 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Button, Row, Col, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import Footer from './Footer';
 
 const HomePage = () => {
 
   const navigate = useNavigate();
 
-  const [titleFontSize, setTitleFontSize] = useState('3rem'); // Default font size for large screens
+  const [titleFontSize, setTitleFontSize] = useState('3rem'); 
   const [worldFontSize, setWorldFontSize] = useState('2.5rem');
 
-  // Function to adjust font sizes based on window width
+  
   const updateFontSizes = () => {
     const windowWidth = window.innerWidth;
 
     if (windowWidth >= 1200) {
-      // Large screens (1200px and up)
+     
       setTitleFontSize('3.5rem');
       setWorldFontSize('3rem');
     } else if (windowWidth >= 768) {
-      // Medium screens (768px to 1199px)
+     
       setTitleFontSize('3rem');
       setWorldFontSize('2.5rem');
     } else {
-      // Small screens (below 768px)
+      
       setTitleFontSize('2rem');
       setWorldFontSize('1.75rem');
     }
   };
 
-  // Update font sizes when the component mounts and on window resize
+  
   useEffect(() => {
-    updateFontSizes(); // Run initially
-    window.addEventListener('resize', updateFontSizes); // Listen for resize events
+    updateFontSizes(); 
+    window.addEventListener('resize', updateFontSizes); 
 
-    // Cleanup listener on component unmount
+   
     return () => window.removeEventListener('resize', updateFontSizes);
   }, []);
 
@@ -53,14 +54,14 @@ const HomePage = () => {
     <Container fluid className="homepage-container bg-grey text-center" style={{ color: '#66FCF1' }}>
       <Row className="justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
         <Col xs={11} md={9}>
-          <h1 
-            className="snippet-lab-title" 
+          <h1
+            className="snippet-lab-title"
             style={{ fontSize: titleFontSize, textAlign: 'center' }}
           >
             WELCOME TO SNIPPET LAB!
           </h1>
-          <h1 
-            className="snippet-lab-world" 
+          <h1
+            className="snippet-lab-world"
             style={{ fontSize: worldFontSize, textAlign: 'center' }}
           >
             Hello World!
@@ -88,17 +89,17 @@ const HomePage = () => {
         <Col xs={12} style={{ backgroundColor: 'black', color: 'white', fontFamily: 'Times New Roman' }}>
           <h1>Let's have a quick look at what we have!!!</h1>
         </Col>
-        
+
         {/* C Programming */}
         <Col xs={12} className="video-card">
           <Card className="text-white bg-dark mb-4">
-            <Card.Body>
-              <iframe 
-                style={{ width: '100%', height: '500px' }} 
-                src="/org1.mp4" 
-                title="C Programming" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            <Card.Body >
+              <iframe
+                style={{ width: '100%', height: '600px', }}
+                src="/c.mp4"
+                title="C Programming"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
               <Card.Title>C Programming</Card.Title>
@@ -113,12 +114,12 @@ const HomePage = () => {
         <Col xs={12} className="video-card">
           <Card className="text-white bg-dark mb-4">
             <Card.Body>
-              <iframe 
-                style={{ width: '100%', height: '500px' }} 
-                src="/org1.mp4" 
-                title="Java Programming" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              <iframe
+                style={{ width: '100%', height: '600px' }}
+                src="/java.mp4"
+                title="Java Programming"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
               <Card.Title>Java Programming</Card.Title>
@@ -133,12 +134,12 @@ const HomePage = () => {
         <Col xs={12} className="video-card">
           <Card className="text-white bg-dark mb-4">
             <Card.Body>
-              <iframe 
-                style={{ width: '100%', height: '500px' }} 
-                src="/org1.mp4" 
-                title="Python Programming" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              <iframe
+                style={{ width: '100%', height: '600px' }}
+                src="/python.mp4"
+                title="Python Programming"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
               <Card.Title>Python Programming</Card.Title>
@@ -153,12 +154,12 @@ const HomePage = () => {
         <Col xs={12} className="video-card">
           <Card className="text-white bg-dark mb-4">
             <Card.Body>
-              <iframe 
-                style={{ width: '100%', height: '500px' }} 
-                src="/org1.mp4" 
-                title="C++ Programming" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              <iframe
+                style={{ width: '100%', height: '600px' }}
+                src="/c++.mp4"
+                title="C++ Programming"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
               <Card.Title>C++ Programming</Card.Title>
@@ -169,44 +170,10 @@ const HomePage = () => {
           </Card>
         </Col>
       </Row>
+      {/* Footer Section */}
+      <Footer />
 
-      <h2>Meet Our Team</h2>
-      <Row>
-        <Col xs={12} sm={6} md={3}>
-          <Card className="team-card">
-            <Card.Img 
-              variant="top" 
-              style={{ width: '100%', height: '200px', objectFit: 'cover' }} 
-            />
-            <Card.Body>
-              <Card.Title>BHAVADHARANI M</Card.Title>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col xs={12} sm={6} md={3}>
-          <Card className="team-card">
-            <Card.Img 
-              variant="top" 
-              style={{ width: '100%', height: '200px', objectFit: 'cover' }} 
-            />
-            <Card.Body>
-              <Card.Title>HARISHMA D</Card.Title>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col xs={12} sm={6} md={3}>
-          <Card className="team-card">
-            <Card.Img 
-              variant="top" 
-              src="/path-to-team-member2.jpg" 
-              style={{ width: '100%', height: '200px', objectFit: 'cover' }} 
-            />
-            <Card.Body>
-              <Card.Title>EVELYN DAVID</Card.Title>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+
     </Container>
   );
 };

@@ -1,4 +1,4 @@
-/* Full page background */
+
 .java-wrapper {
     min-height: 100vh;
     background-color: #1f2833;
@@ -9,7 +9,7 @@
     padding: 20px;
   }
   
-  /* Heading at the top with slight gap */
+  
   .java-heading {
     color: #fff;
     margin-bottom: 30px;
@@ -22,11 +22,11 @@
     width: 100%;
   }
   
-  /* Card initial small size */
+ 
   .card {
-    width: 100%; /* Set to 100% for responsiveness */
+    width: 100%; 
     padding: 10px;
-    background-color: #28f0ceba !important; /* Default color with !important */
+    background-color: #28f0ceba !important; 
     cursor: pointer;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -40,24 +40,24 @@
     z-index: 1;
   }
   
-  /* Hover effect - increase size and change color */
+ 
   .card:hover {
     transform: scale(1.1);
-    background-color: #28a745 !important; /* Color on hover with !important */
+    background-color: #28a745 !important; 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   }
   
   
-  /* Expanded size when selected */
+
   .card.selected {
-    height: 400px; /* Height on expand */
-    background-color: #28a745 !important; /* Color when selected with !important */
+    height: 400px; 
+    background-color: #28a745 !important; 
     z-index: 2;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
     transition: all 0.6s ease-in-out;
   }
   
-  /* Close button styling */
+
   .close-btn {
     position: absolute;
     top: 10px;
@@ -74,15 +74,15 @@
     transform: scale(1.2);
   }
   
-  /* Card content */
+
   .card-content {
     margin-top: 10px;
     color: #000;
     font-weight: bold;
-    display: none; /* Hide content initially */
+    display: none; 
   }
   
-  /* Show content when selected */
+ 
   .card.selected .card-content {
     display: block;
     opacity: 1;

@@ -4,11 +4,11 @@ import './Java.css';
 const Java = () => {
   const [selectedCard, setSelectedCard] = useState(null);
 
-  // Close the card when clicking outside
+  
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (selectedCard !== null && !event.target.closest('.card')) {
-        setSelectedCard(null); // Close the card if clicked outside
+        setSelectedCard(null); 
       }
     };
 
@@ -19,16 +19,16 @@ const Java = () => {
     };
   }, [selectedCard]);
 
-  // Function to handle card click (open/expand card)
+  
   const handleCardClick = (index) => {
     setSelectedCard(index);
   };
 
-  // Function to close the card when clicking the "X" button
+ 
   const handleCloseCard = (event, index) => {
-    event.stopPropagation(); // Prevent triggering card click event
+    event.stopPropagation(); 
     if (selectedCard === index) {
-      setSelectedCard(null); // Close the card when "X" is clicked
+      setSelectedCard(null); 
     }
   };
 
@@ -89,14 +89,14 @@ const Java = () => {
                 <div className="card-body">
                   <h5 className="card-title">{card.title}</h5>
                   <p className="card-content">{card.content}</p>
-                  {/* Conditionally render the syntax only if the card is selected */}
+                  
                   {selectedCard === index && (
                     <div className="syntax-container">
                       <pre>{card.syntax}</pre>
                     </div>
                   )}
 
-                  {/* Close button for the expanded card */}
+                 
                   {selectedCard === index && (
                     <button
                       className="close-btn"

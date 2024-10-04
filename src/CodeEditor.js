@@ -13,6 +13,7 @@ import './editor.css';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 
+
 const CodeEditor = () => {
   const [code, setCode] = useState('');
   const [input, setInput] = useState('');
@@ -72,10 +73,10 @@ const CodeEditor = () => {
       lang: language,
     };
 
-    // Check if the code requires input based on its content
+    
     const requiresInput = /input\s*\(|readline\s*\(|Scanner\s*\(/.test(codeValue);
 
-    // If input is required and the user hasn't provided any input, show the message
+   
     if (requiresInput && input.trim() === '') {
       setOutput('Please enter a number in the input box and click "Run".');
     } else {
@@ -106,24 +107,24 @@ const CodeEditor = () => {
   const saveAsPDF = () => {
     const pdfName = prompt('Enter the name for your PDF:', 'document');
     if (pdfName) {
-      // Use the window's width and height to calculate the PDF size dynamically
-      const scale = 2; // Scaling factor to increase the resolution, you can adjust this
+      
+      const scale = 2;
       html2canvas(document.body, {
-        scale: scale, // Scale to ensure high-resolution capture
-        width: window.innerWidth, // Get the width of the window
-        height: window.innerHeight, // Get the height of the window
+        scale: scale, 
+        width: window.innerWidth, 
+        height: window.innerHeight,
       }).then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF('p', 'mm', 'a4'); // Create an A4 PDF
-        const pdfWidth = pdf.internal.pageSize.getWidth(); // Get PDF page width
-        const pdfHeight = (canvas.height * pdfWidth) / canvas.width; // Calculate height to maintain aspect ratio
-  
+        const pdf = new jsPDF('p', 'mm', 'a4'); 
+        const pdfWidth = pdf.internal.pageSize.getWidth(); 
+        const pdfHeight = (canvas.height * pdfWidth) / canvas.width; 
+
         pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
         pdf.save(pdfName + '.pdf');
       });
     }
   };
-  
+
 
   return (
     <div className="container-fluid" id="color">
@@ -136,9 +137,9 @@ const CodeEditor = () => {
                 id="languageSelect"
                 onChange={(e) => handleLanguageChange(e.target.value)}
                 value={language}
-                style={{ width: '150px' }}
+                style={{ width: '200px' }}
               >
-                <option value="">Choose Language</option>
+                <option selected="" disabled>Choose Language</option>
                 <option value="Java">Java</option>
                 <option value="Cpp">C++</option>
                 <option value="Python">Python</option>
@@ -153,7 +154,7 @@ const CodeEditor = () => {
                 value={theme}
                 style={{ width: '150px' }}
               >
-                <option value="">Choose Theme</option>
+                <option selected="" disabled>Choose Theme</option> 
                 <option value="dracula">Dracula</option>
                 <option value="eclipse">Eclipse</option>
                 <option value="material">Material</option>
@@ -161,9 +162,9 @@ const CodeEditor = () => {
               </select>
             </div>
             <div className="d-flex w-auto justify-content-between">
-            <button onClick={handleRun} className="btn btn-success me-2">
-  <i className="bi bi-play-fill" style={{ fontSize: '2rem' }}></i> {/* Adjust the size as needed */}
-</button>
+              <button onClick={handleRun} className="btn btn-success me-2">
+                <i className="bi bi-play-fill" style={{ fontSize: '2rem' }}></i> 
+              </button>
 
 
 
@@ -205,7 +206,7 @@ const CodeEditor = () => {
           </div>
 
           <div className="d-flex flex-column flex-md-row mt-2">
-          
+
             <button onClick={captureScreenshot} className="btn btn-success me-2 mb-2 mb-md-0 me-md-2 w-auto">
               Screenshot
             </button>
@@ -215,7 +216,9 @@ const CodeEditor = () => {
           </div>
         </div>
       </div>
+
     </div>
+
   );
 };
 

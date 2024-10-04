@@ -1,4 +1,4 @@
-/* Full page background */
+
 .c-wrapper {
   min-height: 100vh;
   background-color: #1f2833;
@@ -9,7 +9,7 @@
   padding: 20px;
 }
 
-/* Heading at the top with slight gap */
+
 .c-heading {
   color: #fff;
   margin-bottom: 30px;
@@ -22,7 +22,6 @@
   width: 100%;
 }
 
-/* Card styling */
 .card {
   width: 100%; 
   padding: 10px;
@@ -40,14 +39,14 @@
   z-index: 1;
 }
 
-/* Hover effect */
+
 .card:hover {
   transform: scale(1.05);
   background-color: #28a745 !important; 
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Expanded card */
+
 .card.selected {
   height: 400px; 
   background-color: #28a745 !important; 
@@ -56,7 +55,7 @@
   transition: all 0.5s ease-in-out;
 }
 
-/* Close button */
+
 .close-btn {
   position: absolute;
   top: 10px;
@@ -68,7 +67,7 @@
   color: #333;
 }
 
-/* Syntax container */
+
 .syntax-container {
   margin-top: 10px;
   background-color: #f8f9fa;
